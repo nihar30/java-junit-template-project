@@ -67,11 +67,11 @@ jobs:
 #       - name: Test with Maven
 #         run: mvn -B test --file pom.xml
 
-#       - name: Publish Unit Test Results
-#         uses: EnricoMi/publish-unit-test-result-action@v1
-#         if: always()
-#         with:
-#           files: target/surefire-reports/*.xml  
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: ./*.xml  
 
 #       - name: Generate JaCoCo Badge
 #         uses: cicirello/jacoco-badge-generator@v2
