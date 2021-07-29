@@ -45,7 +45,7 @@
         </batchtest>
     </junit>
   </target>
-  <target name="test-reports" depends="unittest">
+  <target name="test-reports" depends="run">
       <mkdir dir="reports"/>
       <mkdir dir="reports/raw"/>
       <mkdir dir="reports/html/"/>
