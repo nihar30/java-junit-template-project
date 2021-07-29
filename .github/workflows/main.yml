@@ -53,8 +53,9 @@ jobs:
         if: ${{ env.BUILD_TECH == 'java_ant'  }}
         run: ant -noinput -buildfile build.xml
       - run: ls -R
-      - name: Sonar
-        run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
+      - run: Invoke-RestMethod -Uri 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -OutFile '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar'
+#       - name: Sonar
+#         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
         
           ######## Build - Ant ########
 #       - name: Build with Ant
