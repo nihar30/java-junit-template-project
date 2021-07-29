@@ -63,15 +63,15 @@ jobs:
 #         continue-on-error: ${{ env.CONTINUE_ON_ERROR }}
 
 
-      ######## JUnit Test with Maven ########
+      ######## JUnit Test with ANT ########
 #       - name: Test with Maven
 #         run: mvn -B test --file pom.xml
 
-#       - name: Publish Unit Test Results
-#         uses: EnricoMi/publish-unit-test-result-action@v1
-#         if: always()
-#         with:
-#           files: ./*.xml  
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: ./TEST-helloWorld.HelloWorldTest.xml  
           
       - name: 'Publish Test results'
         uses: actions/upload-artifact@v2.2.3
