@@ -46,7 +46,7 @@ jobs:
           
       ######## Build - ANT ########       
       - name: Build with Ant
-        if: ${{ env.BUILD_TECH == 'java_ant' )
+        if: ${{ env.BUILD_TECH == 'java_ant'  }}
         run: ant -noinput -buildfile build.xml
         
           ######## Build - Ant ########
