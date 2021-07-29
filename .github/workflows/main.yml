@@ -55,7 +55,7 @@ jobs:
           ANT_HOME=/home/runner/ANT/ant
           PATH=$PATH:${ANT_HOME}/bin
           ls -ltrR
-          ant -f fetch.xml -Ddest=system
+          ant -f ./ant/fetch.xml -Ddest=system
        
        
 #       - run: |
