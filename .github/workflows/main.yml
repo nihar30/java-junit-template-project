@@ -58,7 +58,7 @@ jobs:
       - name: Download jar
         run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar'
       - name: Download jar
-        run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/.ant/lib/sonarqube-ant-task-2.7.1.1951.jar'
+        run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/.ant/sonarqube-ant-task-2.7.1.1951.jar'
 
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
