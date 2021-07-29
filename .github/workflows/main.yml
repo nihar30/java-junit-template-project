@@ -54,6 +54,7 @@ jobs:
           mv apache-ant-1.10.11 ant
           ANT_HOME=/home/runner/ANT/ant
           PATH=$PATH:${ANT_HOME}/bin
+          ls -ltrR
           ant -f fetch.xml -Ddest=system
        
        
