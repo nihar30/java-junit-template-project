@@ -49,9 +49,9 @@ jobs:
         run: |
           mkdir /home/runner/ANT
           cd /home/runner/ANT
-          wget http://mirror.candidhosting.com/pub/apache//ant/binaries/apache-ant-1.8.2-bin.tar.gz
-          tar -zxvf apache-ant-1.8.2-bin.tar.gz
-          mv apache-ant-1.8.2 ant
+          wget https://mirrors.estointernet.in/apache//ant/binaries/apache-ant-1.10.11-bin.tar.gz
+          tar -zxvf apache-ant-1.10.11-bin.tar.gz
+          mv apache-ant-1.10.11 ant
           ANT_HOME=/home/runner/ANT/ant
           PATH=$PATH:${ANT_HOME}/bin
           ant -f fetch.xml -Ddest=system
