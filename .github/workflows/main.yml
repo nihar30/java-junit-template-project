@@ -53,6 +53,8 @@ jobs:
         if: ${{ env.BUILD_TECH == 'java_ant'  }}
         run: ant -noinput -buildfile build.xml
       - run: ls -R
+      - name: Sonar
+        run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
         
           ######## Build - Ant ########
 #       - name: Build with Ant
