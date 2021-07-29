@@ -45,9 +45,19 @@
         </batchtest>
     </junit>
   </target>
-   
+  <target name="test-reports" depends="unittest">
+      <mkdir dir="reports"/>
+      <mkdir dir="reports/raw"/>
+      <mkdir dir="reports/html/"/>
+        <junitreport todir="reports">
+            <fileset dir="./">
+                <include name="TEST-*.xml" />
+            </fileset>
+            <report format="noframes" todir="reports/html/" />
+        </junitreport>
+    </target> 
   
-<!--   <target name="unittest">
+<!-- <target name="unittest">
   <mkdir dir="reports"/>
   <mkdir dir="reports/raw"/>
   <mkdir dir="reports/html/"/>
@@ -61,7 +71,9 @@
           <test name="com.dineshonjava.algo.AppTestCases" todir="reports/raw"/>
       <formatter type="xml"/>
     </junit>
- </target> -->
+ </target>  -->
+  
+   
   
   <!-- delete all class files -->
   <!-- To run this: use "ant clean" -->
