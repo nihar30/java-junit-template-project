@@ -43,6 +43,19 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+          
+       ########### Setup ANT #########
+      - name: Setup ANT
+        run: |
+          mkdir /home/runner/ANT
+          cd /home/runner/ANT
+          wget http://mirror.candidhosting.com/pub/apache//ant/binaries/apache-ant-1.8.2-bin.tar.gz
+          tar -zxvf apache-ant-1.8.2-bin.tar.gz
+          mv apache-ant-1.8.2 ant
+          ANT_HOME=/home/runner/ANT/ant
+          PATH=$PATH:${ANT_HOME}/bin
+          ant -f fetch.xml -Ddest=system
+       
        
 #       - run: |
 #             sudo apt install curl
