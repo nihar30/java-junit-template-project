@@ -44,9 +44,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
        
-      - run: |
-            sudo apt install curl
-            curl –O https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar
+#       - run: |
+#             sudo apt install curl
+#             curl –O https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar
        
       ######## Build - ANT ########       
       - name: Build with Ant
