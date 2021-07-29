@@ -77,7 +77,7 @@
 		</taskdef>
 		
 		<!-- Execute SonarQube Scanner for Ant Analysis -->
-		<sonar:sonar />
+<!-- 		<sonar:sonar /> -->
 	</target>
   
 <!-- <target name="unittest">
