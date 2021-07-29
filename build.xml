@@ -39,13 +39,30 @@
           <path refid="classpath.test" />
           <pathelement location="${test.build.dir}"/>
         </classpath>
-        <formatter type="brief" usefile="false" />
+        <formatter type="xml"/>
         <batchtest>
             <fileset dir="${test.src.dir}" includes="**/*Test*.java" />
         </batchtest>
     </junit>
   </target>
    
+  
+<!--   <target name="unittest">
+  <mkdir dir="reports"/>
+  <mkdir dir="reports/raw"/>
+  <mkdir dir="reports/html/"/>
+    <junit printsummary="yes" haltonfailure="yes" showoutput="yes">
+      <classpath>
+       <pathelement location="${build.dir}/classes"/>
+             <fileset dir="${basedir}">
+                 <include name="lib/*.jar" />
+             </fileset>
+         </classpath>
+          <test name="com.dineshonjava.algo.AppTestCases" todir="reports/raw"/>
+      <formatter type="xml"/>
+    </junit>
+ </target> -->
+  
   <!-- delete all class files -->
   <!-- To run this: use "ant clean" -->
   <target name="clean">
