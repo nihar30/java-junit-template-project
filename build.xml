@@ -4,7 +4,7 @@
   <property name="main.src.dir" value="src" />
   <property name="test.build.dir" value="build/test" />
   <property name="test.src.dir" value="test" />
-  <property name="lib.dir" value="lib" />
+  
   
   <!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
 	<property name="sonar.host.url" value="http://20.106.158.209:9000/" />
@@ -74,7 +74,7 @@
   	<target name="sonar" depends="test">
 		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-			<classpath path="${main.build.dir}/sonarqube-ant-task-*.jar" />
+			<classpath path="${basedir}/lib/sonarqube-ant-task-*.jar" />
 		</taskdef>
 		
 		<!-- Execute SonarQube Scanner for Ant Analysis -->
