@@ -80,7 +80,7 @@
 		
 		<!-- Execute SonarQube Scanner for Ant Analysis -->
 <!-- 		<sonar:sonar /> -->
-	<sonar:sonar xmlns:sonar="antlib:org.sonar.ant">
+	
         </sonar:sonar>
 	</target>
   
