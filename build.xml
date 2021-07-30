@@ -68,7 +68,7 @@
 		</taskdef>
 		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec">
 			<junit fork="true" forkmode="once">
-				<classpath refid="libraries.path" />
+				<classpath refid="classpath.test" />
 				<formatter type="plain" />
 				<batchtest fork="yes" todir="${report.junit}">
 					<fileset dir="tests">
