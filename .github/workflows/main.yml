@@ -45,17 +45,17 @@ jobs:
           distribution: 'adopt'
           
        ########### Setup ANT #########
-      - name: Setup ANT
-        run: |
-          mkdir /home/runner/ANT
-          cd /home/runner/ANT
-          wget https://mirrors.estointernet.in/apache//ant/binaries/apache-ant-1.10.11-bin.tar.gz
-          tar -zxvf apache-ant-1.10.11-bin.tar.gz
-          mv apache-ant-1.10.11 ant
-          ANT_HOME=/home/runner/ANT/ant
-          PATH=$PATH:${ANT_HOME}/bin
-          ls -ltrR
-          ant -f ./ant/fetch.xml -Ddest=system
+#       - name: Setup ANT
+#         run: |
+#           mkdir /home/runner/ANT
+#           cd /home/runner/ANT
+#           wget https://mirrors.estointernet.in/apache//ant/binaries/apache-ant-1.10.11-bin.tar.gz
+#           tar -zxvf apache-ant-1.10.11-bin.tar.gz
+#           mv apache-ant-1.10.11 ant
+#           ANT_HOME=/home/runner/ANT/ant
+#           PATH=$PATH:${ANT_HOME}/bin
+#           ls -ltrR
+#           ant -f ./ant/fetch.xml -Ddest=system
        
        
 #       - run: |
