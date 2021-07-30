@@ -72,7 +72,7 @@ jobs:
       - name: Download sonar scanner jar
         run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar'
       - name: Download jacoco jar
-        run: wget 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.agent/0.8.7/org.jacoco.agent-0.8.7.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.agent-0.8.7.jar'
+        run: wget 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar'
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2.2.3
