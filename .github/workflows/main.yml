@@ -43,24 +43,7 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          
-       ########### Setup ANT #########
-#       - name: Setup ANT
-#         run: |
-#           mkdir /home/runner/ANT
-#           cd /home/runner/ANT
-#           wget https://mirrors.estointernet.in/apache//ant/binaries/apache-ant-1.10.11-bin.tar.gz
-#           tar -zxvf apache-ant-1.10.11-bin.tar.gz
-#           mv apache-ant-1.10.11 ant
-#           ANT_HOME=/home/runner/ANT/ant
-#           PATH=$PATH:${ANT_HOME}/bin
-#           ls -ltrR
-#           ant -f ./ant/fetch.xml -Ddest=system
-       
-       
-#       - run: |
-#             sudo apt install curl
-#             curl –O https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar
+              
        
       ######## Build - ANT ########       
       - name: Build with Ant
@@ -79,31 +62,17 @@ jobs:
            
 #wget 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar'
 
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v2.2.3
-        with:
-            name: Jars
-            path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar!/org/jacoco/ant/antlib.xml
+#       - name: 'Upload Artifact'
+#         uses: actions/upload-artifact@v2.2.3
+#         with:
+#             name: Jars
+#             path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar!/org/jacoco/ant/antlib.xml
 
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
         
-          ######## Build - Ant ########
-#       - name: Build with Ant
-#         if: ${{ env.BUILD_TECH == 'java_ant' && (env.RUNTASK == 'BuildOnly' || env.RUNTASK == 'CIOnly' || env.RUNTASK == 'CICD' || env.RUNTASK == 'Full') }}
-#         run: ant -noinput -buildfile build.xml
-        
-      ######## Build - Maven ########
-#       - name: Build with Maven
-#         id: build_maven
-#         if: ${{ env.BUILD_TECH == 'java_maven' }}
-#         run: mvn ${{ env.MVN_ARGS }}
-#         continue-on-error: ${{ env.CONTINUE_ON_ERROR }}
 
 
-      ######## JUnit Test with ANT ########
-#       - name: Test with Maven
-#         run: mvn -B test --file pom.xml
 
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
