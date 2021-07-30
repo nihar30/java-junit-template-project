@@ -72,7 +72,7 @@
   
   <!-- ========= Define SonarQube Scanner for Ant Target ========= -->
   
-  	<target name="sonar" depends="test">
+  	<target name="sonar">
 		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 			<classpath path="${basedir}/lib/sonarqube-ant-task-*.jar" />
