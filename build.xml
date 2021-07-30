@@ -80,7 +80,7 @@
 				<classpath refid="classpath.test" />
 				<formatter type="plain" />
 				<batchtest fork="yes" todir="${report.junit}">
-					<fileset dir="test">
+					<fileset dir="${test.src.dir}">
 						<include name="**/*Test*.java" />
 						<exclude name="**/AllTests.java" />
 					</fileset>
@@ -94,7 +94,7 @@
 			</executiondata>
 			<structure name="Some Legacy Code">
 				<classfiles>
-					<fileset dir="bin" />
+					<fileset dir="${main.build.dir}" />
 				</classfiles>
 				<sourcefiles encoding="UTF-8">
 					<fileset dir="src" />
