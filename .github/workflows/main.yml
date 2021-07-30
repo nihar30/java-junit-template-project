@@ -78,7 +78,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.3
         with:
             name: Jars
-            path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/*.jar
+            path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar!/org/jacoco/ant/antlib.xml
 
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
