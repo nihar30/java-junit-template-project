@@ -20,15 +20,7 @@
 	<property name="sonar.core.codeCoveragePlugin" value="jacoco" />
 	<property name="sonar.jacoco.reportPath" value="${reports.jacoco.dir}/jacoco.exec" />
 
-<!--   <path id="classpath.base" />
-	<path id="libraries.path">
-		<!-- Include compiles classes -->
-		<pathelement location="bin" />
-		<!-- Include all jar files located in lib directory -->
-		<fileset dir="lib">
-			<include name="**/*.jar" />
-		</fileset>
-	</path> -->
+
   <path id="classpath.test">
     <pathelement location="lib/junit-4.12.jar" />
     <pathelement location="lib/hamcrest-core-1.3.jar" />
