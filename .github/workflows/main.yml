@@ -74,11 +74,11 @@ jobs:
       - name: Download jacoco jar
         run: wget 'https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.5/org.jacoco.ant-0.8.5.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.5.jar'
 
-      - name: 'Publish Test results'
+      - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2.2.3
         with:
-            name: Test Report
-            path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/*.*
+            name: Jars
+            path: /home/runner/work/java-junit-template-project/java-junit-template-project/lib/*.jar
 
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
@@ -111,8 +111,7 @@ jobs:
         with:
             name: Test Report
             path: ./*.xml
- /home/runner/work/java-junit-template-project/java-junit-template-project/lib
-
+#
 #       - name: Generate JaCoCo Badge
 #         uses: cicirello/jacoco-badge-generator@v2
 #         with:          
