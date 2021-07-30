@@ -18,7 +18,7 @@
 	<property name="sonar.sources" value="src" />
 	<property name="sonar.binaries" value="target" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
-	<property name="sonar.jacoco.reportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
+	<property name="sonar.testExecutionReportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
 	<property name="sonar.coverage.jacoco.xmlReportPaths" value="/home/runner/work/java-junit-template-project/java-junit-template-project/report/jacoco/jacoco.exec" />
 
 
