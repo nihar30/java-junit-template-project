@@ -79,7 +79,7 @@
 			</junit>
 		</jacoco:coverage>
 		<!-- Create Local Reports as well  -->
-		<jacoco:report>
+<!-- 		<jacoco:report>
 			<executiondata>
 				<file file="${reports.jacoco.dir}/jacoco.exec" />
 			</executiondata>
@@ -92,7 +92,7 @@
 				</sourcefiles>
 			</structure>
 			<html destdir="report/jacoco" />
-		</jacoco:report>
+		</jacoco:report> -->
 	</target>	
 	
 <!--   <target name="test-reports" depends="run">
