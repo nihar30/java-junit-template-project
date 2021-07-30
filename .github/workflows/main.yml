@@ -71,7 +71,8 @@ jobs:
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
         
-
+      - name: files
+        run: ls -ltrR
 
 
       - name: Publish Unit Test Results
@@ -119,40 +120,4 @@ jobs:
 #           SONAR_TOKEN: ${{ secrets.JavaMavenApp }}
 #           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-      
-        
-#   Deploy-Dev:
-#     environment: 'Development'
-#     runs-on: ubuntu-latest
-#     needs: Build
-#     steps:
-#     - name: Deploy dev
-#       run: echo ${{ job.status }}
-      
-#   Functional-Test-Regression:
-#     runs-on: ubuntu-latest
-#     needs: Deploy-Dev
-#     steps:
-#     - name: Regression
-#       run: echo ${{ job.status }}
-      
-#   Functional-Test-Progression:
-#     runs-on: ubuntu-latest
-#     needs: Deploy-Dev
-#     steps:
-#     - name: Progression
-#       run: echo ${{ job.status }}
-      
-#   Performance-Test:
-#     runs-on: ubuntu-latest
-#     needs: Deploy-Dev
-#     steps:
-#     - name: Peerformance-Test
-#       run: echo ${{ job.status }}
-    
-#   Stage-Artifacts:
-#     runs-on: ubuntu-latest
-#     needs: [Functional-Test-Progression, Functional-Test-Regression]
-#     steps:
-#     - name: Upload Artifacts to Artifactory
-#       run: echo ${{ job.status }}
+ 
