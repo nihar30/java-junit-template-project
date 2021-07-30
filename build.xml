@@ -39,7 +39,16 @@
     </javac>
   </target>
 
-  <target name="build" depends="compile">
+<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>	
+	
+  <target name="build" depends="init , compile">
     <mkdir dir="${test.build.dir}"/>
     <javac srcdir="${test.src.dir}" destdir="${test.build.dir}" includeantruntime="false">
         <classpath refid="classpath.test"/>
