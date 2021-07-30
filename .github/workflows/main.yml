@@ -72,7 +72,7 @@ jobs:
       - name: Download sonar scanner jar
         run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar'
       - name: Download jacoco jar
-        run: wget 'https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar'
+        run: wget 'https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.5/org.jacoco.ant-0.8.5.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar'
 
       - name: Sonar
         run: ant sonar -Dsonar.login=d33153c2a482d748cd4db79151f9677dd37f62b0
