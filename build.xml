@@ -1,9 +1,11 @@
 <?xml version="1.0"?>   
-<project name="java-junit-template-project" default="test" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+<project name="java-junit-template-project" default="test" basedir="." xmlns:sonar="antlib:org.sonar.ant" xmlns:jacoco="antlib:org.jacoco.ant">
   <property name="main.build.dir" value="build/main" />  
   <property name="main.src.dir" value="src" />
   <property name="test.build.dir" value="build/test" />
   <property name="test.src.dir" value="test" />
+  <property name="report.junit" value="report/junit" />
+  <property name="reports.jacoco.dir" value="report/jacoco" />
   
   
   <!-- Define the SonarQube global properties (the most usual way is to pass these properties via the command line) -->
@@ -58,6 +60,40 @@
         </batchtest>
     </junit>
   </target>
+	
+<target name="junit" depends="build">
+		<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+			<classpath path="lib/jacocoant.jar" />
+		</taskdef>
+		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec">
+			<junit fork="true" forkmode="once">
+				<classpath refid="libraries.path" />
+				<formatter type="plain" />
+				<batchtest fork="yes" todir="${report.junit}">
+					<fileset dir="tests">
+						<include name="**/*Test*.java" />
+						<exclude name="**/AllTests.java" />
+					</fileset>
+				</batchtest>
+			</junit>
+		</jacoco:coverage>
+		<!-- Create Local Reports as well  -->
+		<jacoco:report>
+			<executiondata>
+				<file file="${reports.jacoco.dir}/jacoco.exec" />
+			</executiondata>
+			<structure name="Some Legacy Code">
+				<classfiles>
+					<fileset dir="bin" />
+				</classfiles>
+				<sourcefiles encoding="UTF-8">
+					<fileset dir="src" />
+				</sourcefiles>
+			</structure>
+			<html destdir="report/jacoco" />
+		</jacoco:report>
+	</target>	
+	
 <!--   <target name="test-reports" depends="run">
       <mkdir dir="reports"/>
       <mkdir dir="reports/raw"/>
@@ -72,7 +108,7 @@
   
   <!-- ========= Define SonarQube Scanner for Ant Target ========= -->
   
-  	<target name="sonar">
+  	<target name="sonar" depends="junit">
 		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 			<!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar" />
