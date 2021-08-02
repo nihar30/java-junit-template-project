@@ -18,8 +18,8 @@
 	<property name="sonar.projectName" value="Sample-ANT" />
 	<property name="sonar.projectVersion" value="1.0" />
 	<property name="sonar.sources" value="src" />
-	<property name="sonar.libraries" value="lib/*.jar" />
-	<property name="sonar.binaries" value="bin" />
+	<property name="sonar.java.libraries" value="lib/*.jar" />
+	<property name="sonar.java.binaries" value="bin" />
 	<property name="sonar.tests" value="test" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
 	<property name="sonar.jacoco.reportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
