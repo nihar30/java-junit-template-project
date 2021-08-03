@@ -69,7 +69,7 @@
           <pathelement location="bin"/>
         </classpath>
         <formatter type="xml"/>	
-        <batchtest>
+        <batchtest todir="${report.junit}">
             <fileset dir="test" includes="**/*Test*.java" />
         </batchtest>
     </junit>
