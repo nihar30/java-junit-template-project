@@ -25,8 +25,9 @@
 <!-- 	<property name="sonar.jacoco.reportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" /> -->
 	<property name="sonar.coverage.jacoco.xmlReportPaths" value="/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
  	<property name="sonar.core.codeCoveragePlugin" value="jacoco" />
-	<property name="sonar.surefire.reportsPath" value="/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
+	<property name="sonar.junit.reportsPath" value="/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
  	<property name="sonar.jacoco.reportPath" value="${reports.jacoco.dir}/jacoco.exec" /> 
+	
 
 
 	<path id="libraries.path">
@@ -63,7 +64,7 @@
   </target>
 	
   <target name="run" depends="build">
-    <junit printsummary="on" haltonfailure="yes" todir="${report.junit}">
+    <junit printsummary="on" haltonfailure="yes">
         <classpath>
           <path refid="libraries.path" />
           <pathelement location="bin"/>
