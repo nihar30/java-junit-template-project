@@ -90,7 +90,7 @@
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacocoant.jar" />
 		</taskdef>
 		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant">
-			<junit fork="true" forkmode="once>
+			<junit fork="true" forkmode="once">
 				 <classpath>
 				  <path refid="libraries.path" />
 				  <pathelement location="bin"/>
