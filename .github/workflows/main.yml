@@ -56,8 +56,8 @@ jobs:
         run: wget 'https://binaries.sonarsource.com/Distribution/sonarqube-ant-task/sonarqube-ant-task-2.7.1.1951.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/sonarqube-ant-task-2.7.1.1951.jar'
       - name: Download jacoco jar
         run: |
-          wget https://repo1.maven.org/maven2/org/jacoco/jacoco/0.8.1/jacoco-0.8.1.zip -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacoco-0.8.1.zip'
-          unzip /home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacoco-0.8.1.zip
+          wget https://repo1.maven.org/maven2/org/jacoco/jacoco/0.8.5/jacoco-0.8.5.zip -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacoco-0.8.5.zip'
+          unzip /home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacoco-0.8.5.zip
           ls -ltr
            
 #wget 'https://search.maven.org/remotecontent?filepath=org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7.jar' -O '/home/runner/work/java-junit-template-project/java-junit-template-project/lib/org.jacoco.ant-0.8.7.jar'
