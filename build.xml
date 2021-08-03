@@ -62,13 +62,13 @@
   </target>
 	
   <target name="run" depends="build">
-    <junit fork="true" forkmode="once">
+    <junit printsummary="on" haltonfailure="yes">
         <classpath>
           <path refid="libraries.path" />
           <pathelement location="bin"/>
         </classpath>
         <formatter type="xml"/>	
-        <batchtest fork="yes" todir="${report.junit}">
+        <batchtest>
             <fileset dir="test" includes="**/*Test*.java" />
         </batchtest>
     </junit>
