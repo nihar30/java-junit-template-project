@@ -60,6 +60,19 @@
 			<classpath refid="libraries.path" />
 		</javac>
   </target>
+	
+  <target name="run" depends="build">
+    <junit printsummary="on" haltonfailure="yes">
+        <classpath>
+          <path refid="classpath.test" />
+          <pathelement location="bin"/>
+        </classpath>
+        <formatter type="xml"/>
+        <batchtest>
+            <fileset dir="test" includes="**/*Test*.java" />
+        </batchtest>
+    </junit>
+  </target>
   
   <target name="sonar" depends="junit">
 		<taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
@@ -72,13 +85,16 @@
   </target>
 
 	
-<target name="junit" depends="build">
+<target name="junit" depends="run">
 		<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacocoant.jar" />
 		</taskdef>
 		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader" >
 			<junit fork="true" forkmode="once">
-				<classpath refid="libraries.path" />
+				 <classpath>
+				  <path refid="libraries.path" />
+				  <pathelement location="bin"/>
+				</classpath>
 				<formatter type="xml" />
 				<batchtest fork="yes" todir="${report.junit}">
 					<fileset dir="test">
