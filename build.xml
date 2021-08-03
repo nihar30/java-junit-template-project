@@ -90,13 +90,13 @@
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacocoant.jar" />
 		</taskdef>
 		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant">
-			<junit printsummary="on" haltonfailure="yes">>
+			<junit fork="true" forkmode="once>
 				 <classpath>
 				  <path refid="libraries.path" />
 				  <pathelement location="bin"/>
 				</classpath>
 				<formatter type="xml" />
-				<batchtest>
+				<batchtest fork="yes" todir="${report.junit}">
 					<fileset dir="test">
 						<include name="**/*Test*.java" />
 						<exclude name="**/AllTests.java" />
