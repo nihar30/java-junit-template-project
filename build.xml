@@ -64,7 +64,7 @@
   <target name="run" depends="build">
     <junit printsummary="on" haltonfailure="yes">
         <classpath>
-          <path refid="classpath.test" />
+          <path refid="libraries.path" />
           <pathelement location="bin"/>
         </classpath>
         <formatter type="xml"/>
