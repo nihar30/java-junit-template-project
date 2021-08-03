@@ -22,11 +22,11 @@
 	<property name="sonar.java.binaries" value="bin" />
 	<property name="sonar.tests" value="test" />
 	<property name="sonar.sourceEncoding" value="UTF-8" />
-	<property name="sonar.jacoco.reportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
+<!-- 	<property name="sonar.jacoco.reportPaths" value= "/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" /> -->
 	<property name="sonar.coverage.jacoco.xmlReportPaths" value="/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
-<!-- 	<property name="sonar.core.codeCoveragePlugin" value="jacoco" /> -->
+ 	<property name="sonar.core.codeCoveragePlugin" value="jacoco" />
 	<property name="sonar.surefire.reportsPath" value="/home/runner/work/java-junit-template-project/java-junit-template-project/TEST-helloWorld.HelloWorldTest.xml" />
-<!-- 	<property name="sonar.jacoco.reportPath" value="${reports.jacoco.dir}/jacoco.exec" /> -->
+ 	<property name="sonar.jacoco.reportPath" value="${reports.jacoco.dir}/jacoco.exec" /> 
 
 
 	<path id="libraries.path">
@@ -90,13 +90,13 @@
 		<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacocoant.jar" />
 		</taskdef>
-		<jacoco:coverage xmlns:jacoco="antlib:org.jacoco.ant">
+		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec">
 			<junit fork="true" forkmode="once">
 				 <classpath>
 				  <path refid="libraries.path" />
 				  <pathelement location="bin"/>
 				</classpath>
-				<formatter type="xml" />
+				<formatter type="plain" />
 				<batchtest fork="yes" todir="${report.junit}">
 					<fileset dir="test">
 						<include name="**/*Test*.java" />
