@@ -90,7 +90,7 @@
 		<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
 			<classpath path="/home/runner/work/java-junit-template-project/java-junit-template-project/lib/jacocoant.jar" />
 		</taskdef>
-		<jacoco:coverage destfile="${reports.jacoco.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant">
+		<jacoco:coverage>
 			<junit fork="true" forkmode="once">
 				 <classpath>
 				  <path refid="libraries.path" />
