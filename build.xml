@@ -67,8 +67,7 @@
           <path refid="libraries.path" />
           <pathelement location="bin"/>
         </classpath>
-        <formatter type="xml"/>
-		
+        <formatter type="xml"/>	
         <batchtest todir="${report.junit}" >
             <fileset dir="test" includes="**/*Test*.java" />
         </batchtest>
